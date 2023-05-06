@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import {RouterModule, Routes} from "@angular/router";
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -30,7 +31,8 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(routes),
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

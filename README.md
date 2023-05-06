@@ -50,3 +50,10 @@ Make changes in the header-component-html file
 
 Now when we click, we have appropriate component in the view 
 ![](img/user-works.png)
+
+# 7 Create form for login 
+![](img/login-component-html.png)
+![](img/app-module-ts-2.png)
+![](img/login-component-ts.png)
+![](img/login-component-ts-2.png)
+![](img/form-submitted-1.png)
