@@ -39,4 +39,14 @@ and __auth_ folder
 - ![](img/app-component-html-file.png)
 And now after running the app we have 
 ![](img/app-running-nav-bar.png)
+- Edit header.component.html file . Remove and rename some elements
 
+# 6 Configure the paths  and editing home , admin and user html files
+File app-module-ts
+![](img/app-module-ts.png)
+Make changes in the header-component-html file
+![](img/header-component-html-1.png)
+![](img/header-component-html-2.png)
+
+Now when we click, we have appropriate component in the view 
+![](img/user-works.png)

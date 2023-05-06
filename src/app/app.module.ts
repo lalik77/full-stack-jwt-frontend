@@ -8,6 +8,15 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import {RouterModule, Routes} from "@angular/router";
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'user', component: UserComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'forbidden', component: ForbiddenComponent }
+];
 
 @NgModule({
   declarations: [
@@ -20,6 +29,7 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     ForbiddenComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule
   ],
   providers: [],
