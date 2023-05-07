@@ -118,3 +118,27 @@ Edit header.component.html file -> add logOut() call
 to click event 
 ![](img/header-component-html-4.png)
 
+# 11 Show Admin or User Dashboard respectively to who is logged in
+![](img/running-app-4.png)
+
+Inside user.service.ts we will write a new function _roleMatch(allowedRoles)_ that 
+will check the role we will pass
+![](img/user-service-ts-2.png)
+
+Inside header.component.ts we inject userService instance
+![](img/header-component-ts-5.png)
+
+Inside  header.component.html write conditions ising *ngIf
+![](img/header-component-html-5.png)
+
+Now we have the app like this 
+Home page
+![](img/running-app-without login.png)
+Entering admin credentials
+![](img/running-app-login-admin.png)
+Logged as admin - we have only admin dashboard active
+![](img/running-app-logged-as-admin.png)
+
+
+
+
