@@ -107,4 +107,14 @@ Write some logic , if when the logger is admin, then
 route to admin , else to user;
 ![](img/login-component-ts-1.png)
 
+# 10 Write logic for Login and Logout
+We open the header.component.ts file 
+![](img/header-component-ts-1.png)
+File header.component.html, using directive *ngIf 
+![](img/header-component-html-3.png)
+Add logOut()
+![](img/header-component-ts-2.png)
+Edit header.component.html file -> add logOut() call
+to click event 
+![](img/header-component-html-4.png)
 
