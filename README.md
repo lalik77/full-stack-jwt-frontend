@@ -79,4 +79,32 @@ login  - admin77
 password - admin@password77
 ![](img/response-from-ui-1.png)
 
+# 9 Using Local Storage
+[Article](https://blog.jscrambler.com/working-with-angular-local-storage)
+
+We generate a new service 
+![](img/generate-user-auth-service.png)
+This service will be responsible to communicate
+with local storage
+
+Inside app.module.ts we have to import RouterModule
+![](img/app-module-import-router-module.png)
+
+Editing user-auth.service.ts 
+We have to save the roles and save the token as well ...
+![](img/user-auth-service.ts.png)
+
+Inject new service in login.component.ts file
+![](img/login-component-ts-inject-user-auth.png)
+When we run the app with the backend
+![](img/running-app-1.png)
+
+Make changes to login() function in login.component.ts file
+![](img/running-app-2.png)
+Abd so on 
+![](img/running-app-3.png)
+Write some logic , if when the logger is admin, then 
+route to admin , else to user;
+![](img/login-component-ts-1.png)
+
 
