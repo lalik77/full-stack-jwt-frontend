@@ -1,11 +1,12 @@
-import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { UserAuthService } from './user-auth.service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {UserAuthService} from './user-auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
 
   PATH_OF_API = "http://localhost:9090";
   requestHeader = new HttpHeaders(
@@ -22,7 +23,7 @@ export class UserService {
       .post(this.PATH_OF_API + "/authenticate", loginData, { headers: this.requestHeader });
   }
 
-  public roleMatch(allowedRoles:any): boolean {
+  public roleMatch(allowedRoles: any): boolean {
     let isMatch = false;
     const userRoles: any = this.userAuthService.getRoles();
 
@@ -33,10 +34,18 @@ export class UserService {
           if (userRoles[i].roleName === allowedRoles[j]) {
             isMatch = true;
             return isMatch;
-          } 
+          }
         }
     }
-    return isMatch;    
+    return isMatch;
+  }
+
+  public forAdmin() {
+    return this.httpClient.get(this.PATH_OF_API + '/forAdmin', {responseType : 'text'});
+  }
+
+  public forUser() {
+    return this.httpClient.get(this.PATH_OF_API + '/forUser', {responseType : 'text'});
   }
 }
 

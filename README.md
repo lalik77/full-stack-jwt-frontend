@@ -178,4 +178,14 @@ in our application
 ![](img/app-running-jwt-7.png)
 ![](img/app-running-jwt-8.png)
 
-
+# 13 - Calling end points in the backend especially created for user and admin
+We have to hit those endpoints from the UI, for this
+we have to create an interceptor and use it
+![](img/hit-end-points.png)
+Inside user service we ill add two functions
+_forAdmin()_
+_forUser()_
+![](img/user-service-forAdmin-forUser.png)
+![](img/user-component-ts.png)
+![](img/user-component-html.png)
+![](img/app-running-for-user.png)

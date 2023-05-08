@@ -1,5 +1,5 @@
 {
-  "name": "jwt-mami-ui",
+  "name": "full-stack-jwt-frontend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
