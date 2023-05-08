@@ -8,14 +8,17 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
-import {RouterModule, Routes} from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
- 
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
+import { AuthGuard } from './_auth/auth.guard';
+import { AuthInterceptor } from './_auth/auth.interceptor';
+import { UserService } from './_services/user.service';
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'user', component: UserComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { roles: ['Admin'] } },
+  { path: 'user', component: UserComponent, canActivate: [AuthGuard], data: { roles: ['User'] } },
   { path: 'login', component: LoginComponent },
   { path: 'forbidden', component: ForbiddenComponent }
 ];
@@ -37,7 +40,15 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

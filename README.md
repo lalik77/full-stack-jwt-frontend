@@ -139,6 +139,43 @@ Entering admin credentials
 Logged as admin - we have only admin dashboard active
 ![](img/running-app-logged-as-admin.png)
 
+# 12 Passing the JWT token. Implement AuthGuard and Interceptor
+Generate guard
+![](img/terminal-generate-auth-guard.png)
+![](img/auth-guard-ts-file-created.png)
+Before writing anything in auth guard , 
+we have to create an interceptor, so we 
+can configure the interceptor
+![](img/create-auth-interceptor-ts-file.png)
+Then we go the app.module.ts file 
+![](img/app-module-ts-1.png)
+![](img/app-module-ts-3.png)
+Now we have to write code inside interceptor and auth guard
 
+Write code in interceptor 
+![](img/auth-interceptor-1.png)
+----
+![](img/auth-interceptor-2.png)
+
+Write code in auth guard 
+![](img/auth-guard-1.png)
+------
+![](img/auth-guard-2.png)
+
+Make config changes to app.module.ts
+![](img/app-module-can-activate.png)
+
+Testing manually the app
+We will create with postman a user to have one admin and one user 
+in our application 
+![](img/postman-create new user.png)
+![](img/app-running-jwt-1.png)
+![](img/app-running-jwt-2.png)
+![](img/app-running-jwt-3.png)
+![](img/app-running-jwt-4.png)
+![](img/app-running-jwt-5.png)
+![](img/app-running-jwt-6.png)
+![](img/app-running-jwt-7.png)
+![](img/app-running-jwt-8.png)
 
 
